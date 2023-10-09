@@ -26,9 +26,9 @@ const {executablePath} = require('puppeteer');
         const nextButton = await page.$('ul.pager li.next a');
         if (!nextButton) {
             console.log('Next button not found. Closing browser.');
-            await browser.close();
             break;
         }
         await nextButton.click();
     }
+    await browser.close();
 })();
